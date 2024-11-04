@@ -7,8 +7,8 @@
  *
  * Este arquivo contém o controller para conversões entre diferentes moedas
  *
- * @category Challenge
- * @package  Back-end
+ * @category Exchange
+ * @package  Controllers
  * @author   Raphael Ceccato Pauli <raphaelcpauli@gmail.com>
  * @license  http://opensource.org/licenses/MIT MIT
  * @link     https://github.com/raphaelceccato/back-end-challenge
