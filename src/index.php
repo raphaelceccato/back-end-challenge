@@ -30,7 +30,8 @@ $router = new Router();
 
 
 $router->get(
-    "/^\/exchange\/(.*)\/(.*)\/(.*)\/(.*)$/i", function (array $params) use ($controller) {
+    "/^\/exchange\/(.*)\/(.*)\/(.*)\/(.*)$/i",
+    function (array $params) use ($controller) {
         $value = isset($params[1]) ? $params[1] : null;
         $from = isset($params[2]) ? $params[2] : null;
         $to = isset($params[3]) ? $params[3] : null;
@@ -71,4 +72,4 @@ $router->get(
 
 
 
-$router->process_request();
+$router->processRequest();
