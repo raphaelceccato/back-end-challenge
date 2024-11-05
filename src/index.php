@@ -30,18 +30,15 @@ $router = new Router();
 
 
 $router->get(
-    "/^\/exchange\/(.*)\/(.*)\/(.*)\/(.*)$/i",
+    "/^\/exchange\/(?P<value>.*)\/(?P<from>.*)\/(?P<to>.*)\/(?P<rate>.*)$/i",
     function (array $params) use ($controller) {
-        $value = isset($params[1]) ? $params[1] : null;
-        $from = isset($params[2]) ? $params[2] : null;
-        $to = isset($params[3]) ? $params[3] : null;
-        $amount = isset($params[4]) ? $params[4] : null;
-
         $res = new RouteResponse();
         $res->content_type = "application/json";
 
         try {
-            $result = $controller->exchange($value, $from, $to, $amount);
+            $result = $controller->exchange(
+                $params["value"], $params["from"], $params["to"], $params["rate"]
+            );
             $res->content = json_encode($result);
         }
         catch (ControllerException $ex) {
